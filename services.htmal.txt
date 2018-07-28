@@ -25,21 +25,21 @@
                 <nav id="nav-menu-container " class="col-9 text-right" >
                     <ul class="nav-menu">
                         <li><a href="#intro">Inicio</a></li>
-                        <li><a href="about.html">Quem Somos</a></li>
-                        <li><a href="services.html">Nosso Time</a></li>
+                        <li><a href="#about">Quem Somos</a></li>
+                        <li><a href="#services">Nosso Time</a></li>
                         <li><a href="#portfolio">Agenda</a></li>
                         <li class="menu-active"><a href="#team">Participe</a></li>
                     </ul>
                 </nav>
             </div>
+           
         </header>
 
 
         <main class="corpo">
             <section>
                 <div class="col-10 offset-1">
-
-                
+                   
                 </div>
             </section>
 
