@@ -416,7 +416,7 @@ footer.footer{
 section#faleconosco{
   background-color: rgba(206, 201, 201,0.3);
   margin-top: 20px;
-  margin-bottom: 20px;
+ /* margin-bottom: 20px;*/
   padding-top: 20px;
   padding-bottom: 20px;
 }
@@ -435,14 +435,32 @@ section#quemsomos{
   margin-bottom: 20px;
   padding: 20px;
   background-color: rgb(248, 247, 247);
+
+}
+
+section#agenda{
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  box-shadow: 0 0 5px 0px rgb(128, 128, 128, 0.5);
+  
 }
 
 section#loginAdm{
   margin-top: 20px;
   margin-bottom: 20px;
   padding: 20px;
-  box-shadow: 0 0 5px 1px gray;
+  box-shadow: 0 0 5px 1px rgba(128, 128, 128, 0.5);
 }
+
+section#paginaAdmin{
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 20px;
+}
+
 
 .time{
    margin-top: 20px;
@@ -457,4 +475,34 @@ section#loginAdm{
 
 .parag{
   text-align: justify;
+}
+
+.dataevento{
+  color:black;
+  font-weight: 800;
+  background-color: rgba(255, 255, 0, 0.5);
+  padding-top: 0px;
+  padding-bottom: 0px;
+
+}
+
+.alinhamentoagenda{
+  padding-bottom: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
+ 
+ 
+}
+
+.tituloagenda{
+  padding: 10px; 
+  box-shadow: 0px 0 10px 0 gray;
+  color: black;
+  
+}
+
+.areaAdm{
+  background-color: gray;
+  margin: 10px;
+  font-weight: 700;
 }
