@@ -461,6 +461,12 @@ section#paginaAdmin{
   padding: 20px;
 }
 
+section#cadastroMembros{
+  margin: 20px;
+  padding: 20px;
+  box-shadow: 0 0 5px 1px rgba(128, 128, 128, 0.5);
+}
+
 
 .time{
    margin-top: 20px;
@@ -502,7 +508,21 @@ section#paginaAdmin{
 }
 
 .areaAdm{
-  background-color: gray;
+  background-color:rgba(185, 184, 184, 0.2);
+  border-radius: 10px;
   margin: 10px;
   font-weight: 700;
+  padding: 10px;
+}
+
+.areaevento{
+  background-color: gray;
+}
+
+.espac-evento{
+  padding: 10px;
+  box-shadow: 0 0 5px 0 gray;
+  margin-bottom:10px;
+  background-color: white;
+  
 }
