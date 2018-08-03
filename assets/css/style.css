@@ -123,12 +123,6 @@
   }
 }
 
-/*.menu{
-    max-width: 100%;
-}
-*/
-
-
 /*Nav*/
 
 .nav-menu, .nav-menu * {
@@ -373,10 +367,6 @@
   }
 
 
-
-
-
-
 /*Footer*/
 
 footer.footer{
@@ -403,7 +393,6 @@ footer.footer{
   padding:0;
   
 }
-
 
 
 /*Main*/
