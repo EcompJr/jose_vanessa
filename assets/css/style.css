@@ -438,13 +438,20 @@ section#quemsomos{
 
 }
 
+section#missaovisaovalores{
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 20px;
+  min-height: 20px;
+}
+
 section#agenda{
   margin-top: 20px;
   margin-bottom: 20px;
   padding-left: 20px;
   padding-right: 20px;
   padding-bottom: 20px;
-  box-shadow: 0 0 5px 0px rgb(128, 128, 128, 0.5);
+  /*box-shadow: 0 0 5px 0px rgb(128, 128, 128, 0.5);*/
   
 }
 
@@ -468,6 +475,7 @@ section#cadastroMembros{
 }
 
 
+
 .time{
    margin-top: 20px;
   
@@ -481,12 +489,13 @@ section#cadastroMembros{
 
 .parag{
   text-align: justify;
+  color: black;
 }
 
 .dataevento{
   color:black;
   font-weight: 800;
-  background-color: rgba(255, 255, 0, 0.5);
+  background-color: rgba(24, 210, 110, 0.2);
   padding-top: 0px;
   padding-bottom: 0px;
 
@@ -525,4 +534,15 @@ section#cadastroMembros{
   margin-bottom:10px;
   background-color: white;
   
+}
+
+.interior-missao{
+  background-color: #f7f7f7;
+  padding: 10px;
+  height: 100%;
+}
+
+.titulo-missao{
+  font-weight: 700;
+  color:#18d26e;
 }
