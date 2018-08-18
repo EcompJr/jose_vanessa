@@ -1,71 +1,103 @@
-@extends('layouts.app')
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Apae - Feira de Santana </title>
 
-@section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
+    <link rel="icon" type="image/jpg" src="images/apae5.png">
+    <link rel="stylesheet" type="text/css" href="vendor/bootstrap-4.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="vendor/OwlCarousel2-2.3.4/dist/assets/owl.carousel.css">
 
-                <div class="card-body">
-                    <form method="POST" action="{{ route('login') }}" aria-label="{{ __('Login') }}">
+    <link rel="stylesheet" type="text/css" href="vendor/OwlCarousel2-2.3.4/dist/assets/owl.carousel.min.css">
+    <link rel="stylesheet" type="text/css" href="vendor/OwlCarousel2-2.3.4/dist/assets/owl.theme.default.min.css">
+
+
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+
+    <div class="top-container">
+
+        <header id="header">
+            <div class="container-fluid" style="display: flex;align-items: center">
+                <div id="logo" class="col-3">
+                    <a href="index.html" class="scrollto"><img src="images/apae2.png" class:"img-fluid" style="width:60px;height:60px" alt=""></a>
+                </div>
+                <nav id="nav-menu-container " class="col-9 text-right" >
+                    <ul class="nav-menu">
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="quemsomos.html">Quem Somos</a></li>
+                        <li><a href="nossotime.html">Nosso Time</a></li>
+                        <li><a href="index.html#agenda">Agenda</a></li>
+                        <li><a href="index.html#faleconosco">Fale Conosco</a></li>
+                        <!--<li class="menu-active"><a href="#team">DOE</a></li>-->
+                    </ul>
+                    
+                    <div><a href="{{ url('/login') }}"><label>Login</label></a></div>
+    
+                </nav>
+               
+            </div>
+           
+
+
+        </header>
+
+        <main>
+            <div class="col-4 offset-4">
+                <section id="loginAdm">
+                    <h4 class="text-center" style="color: #1976d3 ">Login Administrador</h4>
+                    <div class="text-center"><img src="images/admin.png" class="img-fluid" style="width:60px;height:60px" ></div>
+                        <form method = "POST" name="login" action="{{url('/membroAdm')}}">
                         @csrf
-
-                        <div class="form-group row">
-                            <label for="email" class="col-sm-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required autofocus>
-
-                                @if ($errors->has('email'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                @endif
+                            <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" class="form-control" name="email" id="email">
                             </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
-
-                                @if ($errors->has('password'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
-                                @endif
+                            <div class="form-group">
+                            <label for="senha">Senha</label>
+                            <input type="password" class="form-control" name="senha" id="senha">
                             </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <div class="col-md-6 offset-md-4">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-
-                                    <label class="form-check-label" for="remember">
-                                        {{ __('Remember Me') }}
-                                    </label>
-                                </div>
+                            <div class="form-group form-check">
+                            <label class="form-check-label">
+                                <input class="form-check-input" type="checkbox">Lembrar
+                            </label>
                             </div>
-                        </div>
+                            <button type="submit" class="btn btn-primary">Login</button>
+                        </form>
+                    </section>
+            </div>
+        </main>
 
-                        <div class="form-group row mb-0">
-                            <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Login') }}
-                                </button>
 
-                                <a class="btn btn-link" href="{{ route('password.request') }}">
-                                    {{ __('Forgot Your Password?') }}
-                                </a>
-                            </div>
-                        </div>
-                    </form>
+
+        <footer class="footer">
+            <div class="container" style="padding-top:20px;padding-bottom: 20px;align-items:center;margin-top: 10px;margin-bottom:10px">
+                <div class="row" >
+                    <div class="col-12" >
+                        <img src="images/apae5.png" class:"img-fluid" style="width:90px;height:100px" alt="">
+                        <h3 class="titulo-footer ">APAE - Feira de Santana</h3>
+                        <p class="endereco">Tel: (75) 33217300 • E-mail: feiradesantana@apaebrasil.org.br</p>
+                        <p class="endereco">Rua da APAE, 76 • Centro</p>
+                        <p class="endereco">CEP: 44100000 • Feira de Santana • BA</p>
+                    </div>
                 </div>
             </div>
-        </div>
+        </footer>
+
+        
     </div>
-</div>
-@endsection
+
+    <script src = "js/jquery.min.js"></script> 
+    <script src="vendor/OwlCarousel2-2.3.4/dist/owl.carousel.min.js"></script>
+    <script src="js/main.js"></script> 
+    <script src = "vendor/OwlCarousel2-2.3.4/docs_src/assets/vendors/jquery.min.js"></script> 
+    <script src = "vendor/bootstrap-4.1.1/js/bootstrap.min.js"></script> 
+    <script src = "vendor/OwlCarousel2-2.3.4/dist/owl.carousel.js"></script>
+
+
+    
+</body>
+</html>

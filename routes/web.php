@@ -11,10 +11,21 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+/*Route::get('/', function () {
+    return view('index');
 });
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('home');*/
+
+Route::get('/', 'ComumController@retornaIndex')->name('index');
+
+//Route::get('/login', 'ComumController@retornaLogin')->name('login');
+
+Route::post('/membroAdm', 'AdministradorController@logar')->name('login');
+
+Route::post('/cadastrarMembro', 'AdministradorController@cadastrarMembro')->name('cadastroMembro');
+
+
+Auth::routes();
