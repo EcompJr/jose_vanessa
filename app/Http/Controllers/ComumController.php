@@ -12,9 +12,14 @@ class ComumController extends Controller
         return view('index');
     }
 
-    /*public function retornaLogin()
+    public function retornaQuemSomos()
     {
-        return view('');
-    }*/
+        return view('quemsomos');
+    }
+
+    public function retornaNossoTime()
+    {
+        return view('nossotime');
+    }
 
 }

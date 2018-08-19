@@ -21,21 +21,21 @@
     <div class="top-container">
 
         <header id="header">
-            <div class="container-fluid" style="display: flex;align-items: center">
+            <div class="container-fluid" >
                 <div id="logo" class="col-3">
-                    <a href="index.html" class="scrollto"><img src="images/apae2.png" class:"img-fluid" style="width:60px;height:60px" alt=""></a>
+                    <a href="/" class="scrollto"><img src="images/apae2.png" class="img-topBar img-fluid" alt=""></a>
                 </div>
                 <nav id="nav-menu-container " class="col-9 text-right" >
                     <ul class="nav-menu">
-                        <li><a href="index.html">Inicio</a></li>
-                        <li><a href="quemsomos.html">Quem Somos</a></li>
-                        <li><a href="nossotime.html">Nosso Time</a></li>
-                        <li><a href="index.html#agenda">Agenda</a></li>
+                        <li><a href="/">Inicio</a></li>
+                        <li><a href="/quemsomos">Quem Somos</a></li>
+                        <li><a href="/nossotime">Nosso Time</a></li>
+                        <!--<li><a href="index.html#agenda">Agenda</a></li>
                         <li><a href="index.html#faleconosco">Fale Conosco</a></li>
                         <!--<li class="menu-active"><a href="#team">DOE</a></li>-->
                     </ul>
                     
-                    <div><a href="{{ url('/login') }}"><label>Login</label></a></div>
+                    <div><label><a href="{{ url('/login') }}">Login</a></label></div>
     
                 </nav>
                
@@ -48,9 +48,8 @@
 
         <main class="corpo">
             <section id="inicio">
-                <div class="" style="height: 500px">
-                    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel"
-                        style="width: 100%; height: 100%; overflow: hidden">
+                <div class="">
+                    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                         <ol class="carousel-indicators">
                             <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
                             <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -58,13 +57,13 @@
                         </ol>
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <img class="d-block w-100" style="background-image: url(assets/img/apae-car.jpg);height:500px;" src="images/apae-car.jpg" alt="First slide">
+                                <img id="car1" class="d-block w-100" src="images/apae_car4.png" alt="First slide">
                             </div>
                             <div class="carousel-item">
-                                <img class="d-block w-100"  style="background-image: url(assets/img/apae_car.jpg);height:500px;" src="images/apae_car.jpg" alt="Third slide">
+                                <img id="car2" class="d-block w-100" src="images/apae-1.jpg" alt="Second slide">
                             </div>
                             <div class="carousel-item">
-                                <img class="d-block w-100" style="background-image: url(assets/img/apae-car2.jpg);height:500px;" src="images/apae-car2.jpg" alt="Second slide">
+                                <img id="car3" class="d-block w-100" src="images/apae-car2.jpg" alt="Third slide">
                             </div>
                         </div>
                         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -110,9 +109,9 @@
             <section id="agenda">
                 <div class="col-12">
                     <section style="padding: 20px">
-                        <h3 class="text-center" style="font-weight: 700; color:black">Agenda de Eventos</h3>
-                            <div class="carousel-2" style="height: 360px; background-color:rgb(248, 247, 247)">
-                                <div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel" style="width: 100%; height: 100%; overflow: hidden">
+                        <h3 id="events-title" class="text-center">Agenda de Eventos</h3>
+                            <div class="carousel-2" id="carousel-events">
+                                <div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel">
                                     <ol class="carousel-indicators">
                                         <li data-target="#carouselExampleIndicators2" data-slide-to="0" class="active"></li>
                                         <li data-target="#carouselExampleIndicators2" data-slide-to="1"></li>
@@ -197,7 +196,7 @@
 
             <section id="faleconosco">
                 <div class="col-6 offset-3">
-                    <h3 class="text-center" style="font-weight: 700; color:black">Fale Conosco</h3>
+                    <h3 class="text-center" id="contact-title">Fale Conosco</h3>
                     <form>
                         <div class="form-group">
                         <label for="nome">Nome</label>
@@ -211,7 +210,7 @@
                         <label for="mensagem">Mensagem</label>
                         <textarea class="form-control" id="mensagem" placeholder="Sua Mensagem" rows="3"></textarea>
                         </div>
-                        <button type="submit" class="btn btn-block" style="background-color:#1976d3;color: white">ENVIAR</button>
+                        <button type="submit" class="btn btn-block" id="contact-button">ENVIAR</button>
                     </form>
                 </div>
             </section>
@@ -219,11 +218,11 @@
         </main>
 
 
-         <footer class="footer">
-            <div class="container" style="padding-top:20px;padding-bottom: 20px;align-items:center;margin-top: 10px;margin-bottom:10px">
+        <footer class="footer">
+            <div class="container" id="footer" >
                 <div class="row" >
                     <div class="col-12" >
-                        <img src="{{asset('images/apae5.png')}}" class:"img-fluid" style="width:90px;height:100px" alt="">
+                        <img src="{{asset('images/apae5.png')}}" class:"img-fluid" id="img-footer"  alt="">
                         <h3 class="titulo-footer ">APAE - Feira de Santana</h3>
                         <p class="endereco">Tel: (75) 33217300 • E-mail: feiradesantana@apaebrasil.org.br</p>
                         <p class="endereco">Rua da APAE, 76 • Centro</p>

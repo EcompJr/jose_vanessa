@@ -20,9 +20,20 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');*/
 
 Auth::routes();
-Route::get('/', 'ComumController@retornaIndex')->name('index');
-/*Route::post('/membroAdm', 'AdministradorController@logar')->name('login');*/
 
+///////////////////////////////////////Rotas comuns
+Route::get('/', 'ComumController@retornaIndex')->name('index');
+Route::get('/quemsomos','ComumController@retornaQuemSomos');
+Route::get('/nossotime','ComumController@retornaNossoTime');
+
+
+
+
+
+
+
+
+//////////////////////////////////////////////Rotas Admin
 Route::get('/login', 'AdministradorController@retornaViewLogin')->name('login');
 Route::post('/login', 'AdministradorController@logar');
 
@@ -35,9 +46,22 @@ Route::group(['middleware' => ['auth']], function(){
         return redirect()->route('login');
     });
 
-    Route::get('/membroAdm/view', 'AdministradorController@retornaViewMembros')->name('view.membro');
 
-    Route::post('/cadastrarMembro', 'AdministradorController@cadastrarMembro')->name('cadastroMembro');
+    ///////////////////////////////////////////////Retorna telas
+    Route::get('/membroAdm/view', 'AdministradorController@retornaViewMembros')->name('view.membro');
+    Route::get('/eventosAdm/view', 'AdministradorController@retornaViewEventos');
+    Route::get('/cadastro/membroAdm/view', 'AdministradorController@retornaViewCadastroMembro');
+    Route::get('/cadastro/eventosAdm/view', 'AdministradorController@retornaViewCadastroEventos');
+
+    ///////////////////////////////////////////exibe listas
+    Route::get('/membroAdm/lista', 'AdministradorController@listaMembros');
+    Route::get('/eventosAdm/lista', 'AdministradorController@listaEventos');
+
+    //////////////////////////////////////cadastros
+    Route::post('/membroAdm/cadastro', 'AdministradorController@cadastroMembro');
+    Route::post('/eventoAdm/cadastro', 'AdministradorController@cadastroEvento');
+
+   // Route::post('/cadastrarMembro', 'AdministradorController@cadastrarMembro')->name('cadastroMembro');
 
 });
     
@@ -45,9 +69,9 @@ Route::group(['middleware' => ['auth']], function(){
 
 //Retorna telas
 //Route::get('/membroAdm/view', 'AdministradorController@retornaViewMembros');
-Route::get('/eventosAdm/view', 'AdministradorController@retornaViewEventos');
+//Route::get('/eventosAdm/view', 'AdministradorController@retornaViewEventos');
 
-Route::get('/cadastro/membroAdm/view', 'AdministradorController@retornaViewCadastroMembro');
+/*Route::get('/cadastro/membroAdm/view', 'AdministradorController@retornaViewCadastroMembro');
 Route::get('/cadastro/eventosAdm/view', 'AdministradorController@retornaViewCadastroEventos');
 ///////////////////////////////////
 
@@ -55,9 +79,9 @@ Route::get('/membroAdm/lista', 'AdministradorController@listaMembros');
 Route::get('/eventosAdm/lista', 'AdministradorController@listaEventos');
 
 Route::post('/membroAdm/cadastro', 'AdministradorController@cadastroMembro');
-Route::post('/eventoAdm/cadastro', 'AdministradorController@cadastroEvento');
+Route::post('/eventoAdm/cadastro', 'AdministradorController@cadastroEvento');*/
 
 
 //Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+//Route::get('/home', 'HomeController@index')->name('home');

@@ -21,24 +21,28 @@
     <div class="top-container">
 
         <header id="header">
-            <div class="container-fluid" style="display: flex;align-items: center">
+            <div class="container-fluid" >
                 <div id="logo" class="col-3">
-                    <a href="index.html" class="scrollto"><img src="assets/img/apae2.png" class:"img-fluid" style="width:60px;height:60px" alt=""></a>
+                    <a href="/" class="scrollto"><img src="{{asset('images/apae2.png')}}" class="img-topBar img-fluid" alt=""></a>
                 </div>
                 <nav id="nav-menu-container " class="col-9 text-right" >
                     <ul class="nav-menu">
-                        <li><a href="index.html">Inicio</a></li>
-                        <li><a href="quemsomos.html">Quem Somos</a></li>
-                        <li><a href="nossotime.html">Nosso Time</a></li>
-                        <li><a href="index.html#agenda">Agenda</a></li>
+                        <li><a href="/">Inicio</a></li>
+                        <li><a href="/quemsomos">Quem Somos</a></li>
+                        <li><a href="/nossotime">Nosso Time</a></li>
+                        <!--<li><a href="index.html#agenda">Agenda</a></li>
                         <li><a href="index.html#faleconosco">Fale Conosco</a></li>
                         <!--<li class="menu-active"><a href="#team">DOE</a></li>-->
                     </ul>
                     
-                    <div><a href="loginAdm.html"><img src="assets/img/admin.png" class="img-fluid" style="width:40px;height:40px" ></a></div>
+                    <div><label><a href="{{ url('/login') }}">Login</a></label></div>
+    
                 </nav>
                
             </div>
+           
+
+
         </header>
 
         <main>
@@ -67,11 +71,11 @@
         </main>
 
 
-         <footer class="footer">
-            <div class="container" style="padding-top:20px;padding-bottom: 20px;align-items:center;margin-top: 10px;margin-bottom:10px">
+        <footer class="footer">
+            <div class="container" id="footer" >
                 <div class="row" >
                     <div class="col-12" >
-                        <img src="{{asset('images/apae5.png')}}" class:"img-fluid" style="width:90px;height:100px" alt="">
+                        <img src="{{asset('images/apae5.png')}}" class:"img-fluid" id="img-footer"  alt="">
                         <h3 class="titulo-footer ">APAE - Feira de Santana</h3>
                         <p class="endereco">Tel: (75) 33217300 • E-mail: feiradesantana@apaebrasil.org.br</p>
                         <p class="endereco">Rua da APAE, 76 • Centro</p>

@@ -74,6 +74,8 @@
   z-index: 997;
   background-color:rgba(255,255,255);
   box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
+  display: flex;
+  align-items: center";
 }
 
 #header.header-scrolled {
@@ -123,6 +125,10 @@
   }
 }
 
+.img-topBar{
+  width:60px;
+  height:60px;
+}
 /*Nav*/
 
 .nav-menu, .nav-menu * {
@@ -366,6 +372,64 @@
     color: #fff;
   }
 
+  #carouselExampleIndicators{
+    width: 100%;
+    /*height: 100%;*/
+    overflow: hidden;
+  }
+
+  #car1{
+   background-image: url(assets/img/apae_car4.png);
+   /*height:600px;*/
+   object-fit: cover;
+   height:400px;
+
+  }
+
+  #car2{
+    background-image: url(assets/img/apae-1.jpg);
+    /*height:600px;*/
+    object-fit: cover;
+   height:400px;
+
+  }
+
+  #car3{
+    
+    background-image: url(assets/img/apae_car2.jpg);
+    /*height:500px;*/
+    object-fit: cover;
+   height:400px;
+   
+  }
+
+  #events-title{
+    font-weight: 700;
+    color:black;
+  }
+
+  #carousel-events{
+    height: 360px;
+     background-color:rgb(248, 247, 247);
+  }
+
+  #carouselExampleIndicators2{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  #contact-title{
+    font-weight: 700;
+    color:black;
+  }
+
+  #contact-button{
+    background-color:#1976d3;
+    color: white;
+  }
+
+  
+
 
 /*Footer*/
 
@@ -392,6 +456,19 @@ footer.footer{
   margin: 0;
   padding:0;
   
+}
+
+#footer{
+  padding-top:20px;
+  padding-bottom: 20px;
+  align-items:center;
+  margin-top: 10px;
+  margin-bottom:10px;
+}
+
+#img-footer{
+  width:90px;
+  height:100px;
 }
 
 
