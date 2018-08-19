@@ -7,15 +7,23 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
 {
-    use Notifiable;
+  use Notifiable;
 
+  //protected $table = 'administrador';
+  
+  protected $table = 'users';
   protected $fillable = [
-      'name', 'email', 'password',
+    'email', 'password',
   ];
 
-  protected $hidden = ['remember_token'];
+  protected $hidden = ['password','remember_token'];
 
   public $timestamps = false;
+
+  public function administrador()
+  {
+      return $this->hasOne('App\Administrador', 'idAdministrador');
+  }
 
 
 }

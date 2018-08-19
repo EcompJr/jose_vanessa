@@ -6,15 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Apae - Feira de Santana </title>
 
-    <link rel="icon" type="image/jpg" src="images/apae5.png">
-    <link rel="stylesheet" type="text/css" href="vendor/bootstrap-4.1.1/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="vendor/OwlCarousel2-2.3.4/dist/assets/owl.carousel.css">
+    <link rel="icon" type="image/jpg" src="{{asset('images/apae5.png')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('vendor/bootstrap-4.1.1/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('vendor/OwlCarousel2-2.3.4/dist/assets/owl.carousel.css')}}">
 
-    <link rel="stylesheet" type="text/css" href="vendor/OwlCarousel2-2.3.4/dist/assets/owl.carousel.min.css">
-    <link rel="stylesheet" type="text/css" href="vendor/OwlCarousel2-2.3.4/dist/assets/owl.theme.default.min.css">
+    <link rel="stylesheet" type="text/css" href="{{asset('vendor/OwlCarousel2-2.3.4/dist/assets/owl.carousel.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('vendor/OwlCarousel2-2.3.4/dist/assets/owl.theme.default.min.css')}}">
 
 
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="{{asset('css/style.css')}}">
 </head>
 <body>
 
@@ -219,11 +219,11 @@
         </main>
 
 
-        <footer class="footer">
+         <footer class="footer">
             <div class="container" style="padding-top:20px;padding-bottom: 20px;align-items:center;margin-top: 10px;margin-bottom:10px">
                 <div class="row" >
                     <div class="col-12" >
-                        <img src="images/apae5.png" class:"img-fluid" style="width:90px;height:100px" alt="">
+                        <img src="{{asset('images/apae5.png')}}" class:"img-fluid" style="width:90px;height:100px" alt="">
                         <h3 class="titulo-footer ">APAE - Feira de Santana</h3>
                         <p class="endereco">Tel: (75) 33217300 • E-mail: feiradesantana@apaebrasil.org.br</p>
                         <p class="endereco">Rua da APAE, 76 • Centro</p>
@@ -236,12 +236,12 @@
         
     </div>
 
-    <script src = "js/jquery.min.js"></script> 
-    <script src="vendor/OwlCarousel2-2.3.4/dist/owl.carousel.min.js"></script>
-    <script src="js/main.js"></script> 
-    <script src = "vendor/OwlCarousel2-2.3.4/docs_src/assets/vendors/jquery.min.js"></script> 
-    <script src = "vendor/bootstrap-4.1.1/js/bootstrap.min.js"></script> 
-    <script src = "vendor/OwlCarousel2-2.3.4/dist/owl.carousel.js"></script>
+    <script src = "{{asset('js/jquery.min.js')}}"></script> 
+    <script src="{{asset('vendor/OwlCarousel2-2.3.4/dist/owl.carousel.min.js')}}"></script>
+    <script src="{{asset('js/main.js')}}"></script> 
+    <script src = "{{asset('vendor/OwlCarousel2-2.3.4/docs_src/assets/vendors/jquery.min.js')}}"></script> 
+    <script src = "{{asset('vendor/bootstrap-4.1.1/js/bootstrap.min.js')}}"></script> 
+    <script src = "{{asset('vendor/OwlCarousel2-2.3.4/dist/owl.carousel.js')}}"></script>
 
 
     

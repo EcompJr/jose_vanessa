@@ -49,16 +49,32 @@
             <div class="col-4 offset-4">
                 <section id="loginAdm">
                     <h4 class="text-center" style="color: #1976d3 ">Login Administrador</h4>
+                   @if($errors->any())
+                    <div class="alert alert-danger">
+                    <ul>
+                        @foreach($errors->all() as $error)
+                            <li>{{$error}}</li>
+                        @endforeach
+                    </ul>
+
+                   @endif
+                   
+                   
+                    @if(session('msg'))
+                        <div class="alert alert-danger">
+                        {{session('msg')}}
+                        </div>
+                    @endif
                     <div class="text-center"><img src="images/admin.png" class="img-fluid" style="width:60px;height:60px" ></div>
-                        <form method = "POST" name="login" action="{{url('/membroAdm')}}">
-                        @csrf
+                        <form method = "POST" name="login" action="/login">
+                        {{csrf_field()}}
                             <div class="form-group">
                             <label for="email">Email</label>
-                            <input type="email" class="form-control" name="email" id="email">
+                            <input type="email" class="form-control" name="email" id="email" required>
                             </div>
                             <div class="form-group">
                             <label for="senha">Senha</label>
-                            <input type="password" class="form-control" name="senha" id="senha">
+                            <input type="password" class="form-control" name="password" id="senha" required>
                             </div>
                             <div class="form-group form-check">
                             <label class="form-check-label">

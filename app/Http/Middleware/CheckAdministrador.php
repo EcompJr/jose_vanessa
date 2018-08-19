@@ -15,6 +15,9 @@ class CheckAdministrador
      */
     public function handle($request, Closure $next)
     {
+        if(Auth::user()->administrador == null) {
+            return redirect()->route('index');
+        }
         return $next($request);
     }
 }
