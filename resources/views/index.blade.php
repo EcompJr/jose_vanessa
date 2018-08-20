@@ -199,18 +199,19 @@
             <section id="faleconosco">
                 <div class="col-6 offset-3">
                     <h3 class="text-center" id="contact-title">Fale Conosco</h3>
-                    <form>
+                    <form method = "POST" name="contato" action="/contato">
+                    {{ csrf_field() }}
                         <div class="form-group">
                         <label for="nome">Nome</label>
-                        <input type="text" class="form-control" id="nome" aria-describedby="emailHelp" placeholder="Informe seu nome">
+                        <input type="text" class="form-control" name="nome" id="nome" aria-describedby="emailHelp" placeholder="Informe seu nome">
                         </div>
                         <div class="form-group">
                         <label for="email">Email</label>
-                        <input type="email" class="form-control" id="email" placeholder="Informe seu email">
+                        <input type="email" class="form-control" name="email" id="email" placeholder="Informe seu email">
                         </div>
                         <div class="form-group">
                         <label for="mensagem">Mensagem</label>
-                        <textarea class="form-control" id="mensagem" placeholder="Sua Mensagem" rows="3"></textarea>
+                        <textarea class="form-control" name="mensagem" id="mensagem" placeholder="Sua Mensagem" rows="3"></textarea>
                         </div>
                         <button type="submit" class="btn btn-block" id="contact-button">ENVIAR</button>
                     </form>

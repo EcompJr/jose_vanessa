@@ -25,7 +25,8 @@ Auth::routes();
 Route::get('/', 'ComumController@retornaIndex')->name('index');
 Route::get('/quemsomos','ComumController@retornaQuemSomos');
 Route::get('/nossotime','ComumController@retornaNossoTime');
-Route:: get('/','ComumController@retornaEventos');
+Route::get('/','ComumController@retornaEventos');
+Route::post('/contato', 'ComumController@enviaMensagemContato');
 
 
 

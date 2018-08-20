@@ -16,7 +16,8 @@ class DatabaseSeeder extends Seeder
            DepartamentoTableSeeder::class,
            MembroTableSeeder::class,
            EventoTableSeeder::class,
-           UsersTableSeeder::class
+           UsersTableSeeder::class,
+           ContatoTableSeeder::class
         ]);
     }
 }

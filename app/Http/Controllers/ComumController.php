@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use Iluminate\Http\Request;
+use Illuminate\Http\Request;
 use App\Evento;
 use App\Membro;
 use App\User;
 use App\Departamento;
+use App\Contato;
 
 class ComumController extends Controller
 {
@@ -33,6 +34,17 @@ class ComumController extends Controller
         $eventos = Evento::all();
         return view('index', compact('eventos'));
 
+    }
+
+    public function enviaMensagemContato(Request $request){
+        $contato = new Contato;
+        $contato->nome = $request->nome;
+        $contato->email = $request->email;
+        $contato->mensagem = $request->mensagem;
+
+        $contato->save();
+        //return view('membroAdm');
+        return redirect()->intended('/');
     }
 
 }
