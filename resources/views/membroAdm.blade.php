@@ -74,13 +74,14 @@
                                     </div>
                                 </div>
                                 <div class="col-6 text-right">
-                                    <a href="route{{'/altera/membroAdm/view', $membro->idMembro}}"><button class="btn" style="background-color: yellow; border-color: yellow;color: white">Alterar</button></a>
-                                    <button class="btn" style="background-color: red; border-color:red;color: white">Remover</button>
+                                    <a href="{{url('/altera/membroAdm/view'.$membro->idMembro)}}"><button class="btn" style="background-color: yellow; border-color: yellow;color: white">Alterar</button></a>
+                                    <a href="{{url('/membroAdm/deletar'.$membro->idMembro)}}"><button class="btn" style="background-color: red; border-color:red;color: white">Remover</button></a>
 
                                 </div>
                             </div>
                         </div>
                         @endforeach
+                 
 
                        <!-- <div class="container">
                                 <div class="row espac-evento">

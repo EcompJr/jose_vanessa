@@ -68,8 +68,8 @@
                                     </div>
                                 </div>
                                 <div class="col-6 text-right">
-                                    <a href="route{{'/altera/eventosAdm/view', $evento->idEvento}}"><button class="btn" style="background-color: yellow; border-color: yellow;color: white">Alterar</button></a>
-                                    <button class="btn" style="background-color: red; border-color:red;color: white">Remover</button>
+                                    <a href="{{url('/altera/eventosAdm/view'.$evento->idEvento)}}"><button class="btn" style="background-color: yellow; border-color: yellow;color: white">Alterar</button></a>
+                                    <a href="{{url('/eventoAdm/deletar'.$evento->idEvento)}}"><button class="btn" style="background-color: red; border-color:red;color: white">Remover</button></a>
 
                                 </div>
                             </div>

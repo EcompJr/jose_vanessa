@@ -44,19 +44,31 @@
             <div class="col-6 offset-3">
                 <section id="cadastroMembros">
                     <h3 class="text-center" style="font-weight: 700; color:black">Alterar Membro</h3>
-                    <form method = "POST" name="alteraMembro" action="route{{'/membroAdm/atualizar', $membro->idMembro}}">
-                    { !!method_field('PUT')!! }
+                    <form method = "POST" name="alteraMembro" action="{{url('/membroAdm/atualizar'.$membro->idMembro)}}">
+                  <!--  { !!method_field('PUT')!! }-->
                     {{ csrf_field() }}
                         <div class="form-group">
                             <label class="my-1 mr-2" for="setor">Setor</label>
-                            <select name="idDepartamento" class="custom-select my-1 mr-sm-2" id="setor">
+                            <select name="idDepartamento" class="custom-select my-1 mr-sm-2" id="idDepartamento">
                                 @if($membro->idDepartamento == '1')
                                     <option value="1" selected>DIRETORIA ADMINISTRATIVA</option>
+                                    <option value="2">COORDENAÇÃO</option>
+                                    <option value="3">EQUIPE TÉCNICA</option>
+                                    <option value="4">ADMINISTRAÇÃO E AUXILIARES</option>
                                 @elseif($membro->idDepartamento == '2')
+                                    <option value="1">DIRETORIA ADMINISTRATIVA</option>
                                     <option value="2" selected>COORDENAÇÃO</option>
+                                    <option value="3">EQUIPE TÉCNICA</option>
+                                    <option value="4">ADMINISTRAÇÃO E AUXILIARES</option>
                                 @elseif($membro->idDepartamento == '3')
+                                    <option value="1">DIRETORIA ADMINISTRATIVA</option>
+                                    <option value="2">COORDENAÇÃO</option>
                                     <option value="3" selected>EQUIPE TÉCNICA</option>
+                                    <option value="4">ADMINISTRAÇÃO E AUXILIARES</option>
                                 @elseif($membro->idDepartamento == '4')
+                                    <option value="1">DIRETORIA ADMINISTRATIVA</option>
+                                    <option value="2">COORDENAÇÃO</option>
+                                    <option value="3">EQUIPE TÉCNICA</option>
                                     <option value="4" selected>ADMINISTRAÇÃO E AUXILIARES</option>
                                 @endif
                             </select>

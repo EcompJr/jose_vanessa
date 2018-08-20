@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
+
 class Departamento extends Model
 {
     protected $table = 'departamento';
@@ -12,5 +13,9 @@ class Departamento extends Model
     public $timestamps = false;
     //
 
+    public function membros()
+    {
+        return $this->hasMany('App\Membro', 'idDepartamento');
+    }
    
 }

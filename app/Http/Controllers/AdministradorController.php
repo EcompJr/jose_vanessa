@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-//use Illuminate\Support\Facades\Auth;
 use Auth;
 use App\Evento;
 use App\Membro;
@@ -61,44 +60,27 @@ class AdministradorController extends Controller
     
 
     public function retornaViewAlteraMembro($id){
-       // $membros = Membro::all();
+        $membro = Membro::where('idMembro',$id)->first();
        
-        $membro = Membro::where('idMembro','$id');
+
         return view('alterarMembro', compact('membro'));
 
-       // return view('alterarMembro');
     }
 
     public function retornaViewAlteraEvento($id){
-        $evento = Evento::where('idEvento','$id');
+   
+        $evento = Evento::where('idEvento',$id)->first();
+       
+
         return view('alterarEvento', compact('evento'));
 
-       // return view('alterarEvento');
+   
     }
     
-    /**********************************************Listas**********************************************/
-
-/*pega do banco para listar na tela */
-  /*  public function listaMembros(){
-        $membros = Membro::all();
-        return view('membroAdm', membros);
-    }
-
-    public function listaEventos(){
-        $eventos = Evento::all();
-        return view('eventosAdm',eventos);
-    }*/
-
 
     /*********************************************Cadastros*******************************************/
 
     public function cadastroMembro(Request $request){//request
-        //save
-       
-       // return Redirect::to('/membroAdm');
-      //  return Redirect::route('/membroAdm');
-       //dd($request->all());
-       
        
        $membro = new Membro;
         $membro->nome = $request->nome;
@@ -111,9 +93,7 @@ class AdministradorController extends Controller
     }
 
     public function cadastroEvento(Request $request){
-        //dd($request->all());
-
-       // return redirect()->intended('/membroAdm/view');
+      
         $evento = new Evento;
        
         $evento->data = $request->data;
@@ -121,50 +101,54 @@ class AdministradorController extends Controller
         $evento->local = $request->local;
         $evento->horario = $request->horario;
 
-      //  $evento->save()
-       // return redirect()->intended('/eventosAdm/view');
         $evento->save();
         return redirect()->intended('/eventosAdm/view');
-
-        
-        //return redirect()->back();
-
-        //return redirect()->back()->with('msg','Acesso negado');
-        //return redirect()->intended('/eventosAdm/view');
-      //  return $this->retornaViewEventos();
-        //return view('eventosAdm');
 
     }
 
     /******************************************Atualizações*******************************************/
-    public function atualizaMembro(Request $request, $id){
+    public function atualizaMembro(Request $request, $id){ 
+        $membro = Membro::find($id);
 
-        //dd($request->all());
-        //$membro = Membro::find($request->idMembro);
-       // $membro = Membro::where('idMembro','$id');
-       // $membro = Membro::find($id);
+        $membro->update([
+            'idDepartamento' => $request->idDepartamento,
+            'nome' => $request->nome,
+            'funcao' => $request->funcao
 
+        ]);
 
-        //dd($membro->idMembro);
-       
-        /*if($membro == null || ->produtor_id != Auth::user()->produtor->usuario_id)
-            return redirect()->route('index');*/
-      //  $titulo = 'Alterar';
-        return 'alteração de dados';
-        //return view('cadastrarMembro', compact('membro','titulo'));
+        return redirect()->intended('/membroAdm/view');
     }
 
-    public function atualizaEvento(Request $request){
-        
+    public function atualizaEvento(Request $request, $id){
+        $evento = Evento::find($id);
+        $evento->update([
+            'data' => $request->data,
+            'nome' => $request->nome,
+            'local' => $request->local,
+            'horario' => $request->horario,
+
+        ]);
+
+        return redirect()->intended('/eventosAdm/view');
     }
 
     /******************************************Exclusões**********************************************/
-    public function deletaMembro(){
+    public function deletaMembro($id){
+   
+      $membro = Membro::find($id);
+      $membro->delete();
 
+      return redirect()->intended('/membroAdm/view');
     }
 
-    public function deletaEvento(){
-        
+    public function deletaEvento($id){
+        $evento = Evento::find($id);
+        $evento->delete();
+
+      return redirect()->intended('/eventosAdm/view');
+
+
     }
 
 

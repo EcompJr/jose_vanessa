@@ -56,10 +56,6 @@ Route::group(['middleware' => ['auth']], function(){
     Route::get('/cadastro/membroAdm/view', 'AdministradorController@retornaViewCadastroMembro');
     Route::get('/cadastro/eventosAdm/view', 'AdministradorController@retornaViewCadastroEvento');
 
-    ///////////////////////////////////////////exibe listas
-    /*Route::get('/membroAdm/lista', 'AdministradorController@listaMembros');
-    Route::get('/eventoAdm/lista', 'AdministradorController@listaEventos');*/
-
     //////////////////////////////////////cadastros
     Route::post('/membroAdm/cadastro', 'AdministradorController@cadastroMembro');
     Route::post('/eventoAdm/cadastro', 'AdministradorController@cadastroEvento');
@@ -72,31 +68,9 @@ Route::group(['middleware' => ['auth']], function(){
     Route::post('/eventoAdm/atualizar{id}', 'AdministradorController@atualizaEvento');
 
     //////////////////////////////////////Exclusões
-    Route::post('/membroAdm/deletar{id}', 'AdministradorController@deletaMembro');
-    Route::post('/eventoAdm/deletar{id}', 'AdministradorController@deletaEvento');
+    Route::get('/membroAdm/deletar{id}', 'AdministradorController@deletaMembro');
+    Route::get('/eventoAdm/deletar{id}', 'AdministradorController@deletaEvento');
 
-
-   // Route::post('/cadastrarMembro', 'AdministradorController@cadastrarMembro')->name('cadastroMembro');
 
 });
     
-
-
-//Retorna telas
-//Route::get('/membroAdm/view', 'AdministradorController@retornaViewMembros');
-//Route::get('/eventosAdm/view', 'AdministradorController@retornaViewEventos');
-
-/*Route::get('/cadastro/membroAdm/view', 'AdministradorController@retornaViewCadastroMembro');
-Route::get('/cadastro/eventosAdm/view', 'AdministradorController@retornaViewCadastroEventos');
-///////////////////////////////////
-
-Route::get('/membroAdm/lista', 'AdministradorController@listaMembros');
-Route::get('/eventosAdm/lista', 'AdministradorController@listaEventos');
-
-Route::post('/membroAdm/cadastro', 'AdministradorController@cadastroMembro');
-Route::post('/eventoAdm/cadastro', 'AdministradorController@cadastroEvento');*/
-
-
-//Auth::routes();
-
-//Route::get('/home', 'HomeController@index')->name('home');

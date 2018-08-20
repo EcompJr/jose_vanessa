@@ -44,25 +44,25 @@
             <div class="col-6 offset-3">
                 <section id="cadastroMembros">
                     <h3 class="text-center" style="font-weight: 700; color:black">Alterar Evento</h3>
-                    <form method="POST" name="eventos" action="/eventoAdm/cadastro">
+                    <form method="POST" name="eventos" action="{{url('/eventoAdm/atualizar'.$evento->idEvento)}}">
                     {{ csrf_field() }}
                         <div class="form-group">
                             <label class="my-1 mr-2" for="data">Data</label>
-                            <input type="text" class="form-control" placeholder="Ex.: dd/mm/aaaa" maxlength="10" name="data">
+                            <input type="text" class="form-control" value="{{$evento->data}}" placeholder="Ex.: dd/mm/aaaa" maxlength="10" name="data">
                         </div>
                         <div>
                             <label for="nome">Nome do Evento</label>
-                            <input type="text" name="nome" class="form-control" id="nome" aria-describedby="emailHelp" placeholder="">
+                            <input type="text" name="nome" value="{{$evento->nome}}" class="form-control" id="nome" aria-describedby="emailHelp" placeholder="">
                         </div>
                         <div class="form-group">
                             <label for="local">Local</label>
-                            <input type="text" name="local" class="form-control" id="local" placeholder="">
+                            <input type="text" name="local" value="{{$evento->local}}" class="form-control" id="local" placeholder="">
                         </div>
                         <div class="form-group">
                             <label for="horario">Horário</label>
-                            <input type="text" class="form-control" placeholder="Ex.: 00:00:00" maxlength="8" name="horario">
+                            <input type="text" class="form-control" value="{{$evento->horario}}" placeholder="Ex.: 00:00:00" maxlength="8" name="horario">
                         </div>
-                        <button type="submit" class="btn btn-block" style="background-color:#1976d3;color: white">CADASTRAR</button>
+                        <button type="submit" class="btn btn-block" style="background-color:#1976d3;color: white">Alterar</button>
                     </form>
                 </section>
             </div>
