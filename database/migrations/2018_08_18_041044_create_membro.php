@@ -15,10 +15,10 @@ class CreateMembro extends Migration
     {
         Schema::create('membro', function(Blueprint $table){
             $table->increments('idMembro');
-            $table->string('nome');
-            $table->string('cargo');
             $table->integer('idDepartamento')->unsigned();
             $table->index(['idDepartamento'], 'fk_departamento_membro');
+            $table->string('nome');
+            $table->string('funcao');
 
 
            // $table->primary('idMembro');

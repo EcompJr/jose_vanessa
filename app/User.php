@@ -20,10 +20,10 @@ class User extends Authenticatable
 
   public $timestamps = false;
 
-  public function administrador()
+  /*public function administrador()
   {
       return $this->hasOne('App\Administrador', 'idAdministrador');
-  }
+  }*/
 
 
 }

@@ -43,26 +43,32 @@
 
             <div class="col-6 offset-3">
                 <section id="cadastroMembros">
-                    <h3 class="text-center" style="font-weight: 700; color:black">Novo Membro</h3>
-                    <form method = "POST" name="cadastroMembro" action="/membroAdm/cadastro">
+                    <h3 class="text-center" style="font-weight: 700; color:black">Alterar Membro</h3>
+                    <form method = "POST" name="alteraMembro" action="route{{'/membroAdm/atualizar', $membro->idMembro}}">
+                    { !!method_field('PUT')!! }
                     {{ csrf_field() }}
                         <div class="form-group">
                             <label class="my-1 mr-2" for="setor">Setor</label>
                             <select name="idDepartamento" class="custom-select my-1 mr-sm-2" id="setor">
-                                <option value="1">DIRETORIA ADMINISTRATIVA</option>
-                                <option value="2">COORDENAÇÃO</option>
-                                <option value="3">EQUIPE TÉCNICA</option>
-                                <option value="4">ADMINISTRAÇÃO E AUXILIARES</option>
+                                @if($membro->idDepartamento == '1')
+                                    <option value="1" selected>DIRETORIA ADMINISTRATIVA</option>
+                                @elseif($membro->idDepartamento == '2')
+                                    <option value="2" selected>COORDENAÇÃO</option>
+                                @elseif($membro->idDepartamento == '3')
+                                    <option value="3" selected>EQUIPE TÉCNICA</option>
+                                @elseif($membro->idDepartamento == '4')
+                                    <option value="4" selected>ADMINISTRAÇÃO E AUXILIARES</option>
+                                @endif
                             </select>
 
                             <label for="nome">Nome</label>
-                            <input type="text" class="form-control" name="nome" id="nome" aria-describedby="emailHelp" placeholder="">
+                            <input type="text" class="form-control" name="nome" id="nome" aria-describedby="emailHelp" value="{{$membro->nome or old('nome')}}">
                         </div>
                         <div class="form-group">
                             <label for="funcao">Função</label>
-                            <input type="text" class="form-control" name="funcao" id="funcao" placeholder="">
+                            <input type="text" class="form-control" name="funcao" id="funcao" value="{{$membro->funcao}}">
                         </div>
-                        <button type="submit" class="btn btn-block" style="background-color:#1976d3;color: white">CADASTRAR</button>
+                        <button type="submit" class="btn btn-block" style="background-color:#1976d3;color: white">Alterar</button>
                     </form>
                 </section>
             </div>

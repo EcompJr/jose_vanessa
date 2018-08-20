@@ -13,24 +13,27 @@ class EventoTableSeeder extends Seeder
     public function run()
     {
         Evento::create([
-	        'nome' => 'Evento Beneficente 1',
-	        'data' => '2018/09/15',
-	        'hora' => '18:00:00',
-	        'local' => 'Apae'
+            'data' => '05/09/2018',
+            'nome' => 'Evento Beneficente 1',
+            'local' => 'Apae',
+	        'horario' => '18:00:00'
+	       
         ]);
         
         Evento::create([
-	        'nome' => 'Evento Beneficente 2',
-	        'data' => '2018/10/20',
-	        'hora' => '17:00:00',
-	        'local' => 'Apae'
+            'data' => '05/08/2018',
+            'nome' => 'Evento Beneficente 2',
+            'local' => 'Apae',
+	        'horario' => '17:00:00'
+	        
         ]);
         
         Evento::create([
-	        'nome' => 'Evento Beneficente 3',
-	        'data' => '2018/11/05',
-	        'hora' => '15:00:00',
-	        'local' => 'Apae'
+            'data' => '05/11/2018',
+            'nome' => 'Evento Beneficente 3',
+            'local' => 'Apae',
+	        'horario' => '15:00:00'
+	        
 	    ]);
         //
     }

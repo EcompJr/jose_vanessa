@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use Iluminate\Http\Request;
+use App\Evento;
+use App\Membro;
+use App\User;
+use App\Departamento;
 
 class ComumController extends Controller
 {
@@ -19,7 +23,16 @@ class ComumController extends Controller
 
     public function retornaNossoTime()
     {
-        return view('nossotime');
+        $membros = Membro::all();
+
+        return view('nossotime', compact('membros'));
+
+    }
+
+    public function retornaEventos(){
+        $eventos = Evento::all();
+        return view('index', compact('eventos'));
+
     }
 
 }

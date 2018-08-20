@@ -15,10 +15,11 @@ class CreateEvento extends Migration
     {
         Schema::create('evento', function(Blueprint $table){
             $table->increments('idEvento');
+            $table->string('data');
             $table->string('nome');
-            $table->date('data');
-            $table->time('hora');
             $table->string('local');
+            $table->string('horario');
+           
 
           //  $table->primary('idEvento');
 

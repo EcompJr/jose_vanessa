@@ -13,15 +13,17 @@ class MembroTableSeeder extends Seeder
     public function run()
     {
         Membro::create([
-	        'nome' => 'Mary Diva' ,
-            'cargo' => 'Diretor',
             'idDepartamento' => '1' ,
+            'nome' => 'Mary Diva' ,
+            'funcao' => 'Diretor',
+            
         ]);
 
         Membro::create([
-	        'nome' => 'Mary Diva' ,
-            'cargo' => 'Coordenador',
             'idDepartamento' => '2' ,
+            'nome' => 'Mary Diva' ,
+            'funcao' => 'Coordenador',
+            
         ]);
         //
     }

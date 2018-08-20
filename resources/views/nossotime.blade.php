@@ -51,7 +51,18 @@
                     <h3 class="text-center">Equipe</h3>
                     
                     <section class="time">
-                        <Label class="titulo-section text-center">DIRETORIA ADMINISTRATIVA</label>
+                    @foreach($membros as $membro)
+                        <Label class="titulo-section text-center">
+                        @if($membro->idDepartamento == 1)
+                        DIRETORIA ADMINISTRATIVA
+                        @elseif($membro->idDepartamento == 2)
+                        COORDENAÇÃO
+                        @elseif($membro->idDepartamento == 3)
+                        EQUIPE TÉCNICA
+                        @elseif($membro->idDepartamento == 4)
+                        ADMINISTRAÇÃO E AUXILIARES
+                        @endif
+                        </label>
                         <div class="table-responsive">
                             <table class="table">
                                 <thead>
@@ -62,15 +73,16 @@
                                 </thead>
                                 <tbody>
                                       <tr>
-                                        <th scope="row">Mary Diva P. Makhoul</th>
-                                        <td>Diretor</td> 
+                                        <th scope="row">{{$membro->nome}}</th>
+                                        <td>{{$membro->funcao}}</td> 
                                       </tr>
                                 </tbody>
                             </table>
                         </div>
+                        @endforeach
                     </section>
-
-                    <section class="time">
+                  
+                  <!--  <section class="time">
                         <Label class="titulo-section text-center">COORDENADORES</label>
                         <div class="table-responsive">
                             <table class="table">
@@ -128,7 +140,7 @@
                                         </tbody>
                                     </table>
                             </div>
-                        </section>
+                        </section>-->
                 
 
                 </section>

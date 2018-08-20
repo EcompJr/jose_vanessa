@@ -45,33 +45,44 @@
                 <section id="paginaAdmin">
                     <h3 class="text-center" style="font-weight: 700; color: black">Membros</h3>
                     <section class="areaAdm ">
-                        <button class="btn btn-success text-left" action="" method="POST" href="/membroAdm/cadastro" style=" margin-bottom: 10px">Cadastrar Novo Membro</button>
-                        
+                        <a href="/cadastro/membroAdm/view"><button class="btn btn-success text-left" style=" margin-bottom: 10px">Cadastrar Novo Membro</button></a>
+                        @foreach($membros as $membro)
                         <div class="container">
                             <div class="row espac-evento">
                                 <div class="col-6">
                                     <div class="row">
                                         <label>Setor: </label>
-                                        <label>&nbsp DIRETORIA ADMINISTRATIVA</label>
+                                        <label>&nbsp
+                                        @if($membro->idDepartamento == 1)
+                                        DIRETORIA ADMINISTRATIVA
+                                        @elseif($membro->idDepartamento == 2)
+                                        COORDENAÇÃO
+                                        @elseif($membro->idDepartamento == 3)
+                                        EQUIPE TÉCNICA
+                                        @elseif($membro->idDepartamento == 4)
+                                        ADMINISTRAÇÃO E AUXILIARES
+                                        @endif
+                                        </label>
                                     </div>
                                     <div class="row">
                                         <label>Nome: </label>
-                                        <label>&nbsp Mary Diva P. Makhoul</label>
+                                        <label>&nbsp {{$membro->nome}}</label>
                                     </div>
                                     <div class="row">
                                         <label>Função: </label>
-                                        <label>&nbsp Diretor</label>
+                                        <label>&nbsp {{$membro->funcao}}</label>
                                     </div>
                                 </div>
                                 <div class="col-6 text-right">
-                                    <button class="btn" style="background-color: yellow; border-color: yellow;color: white">Alterar</button>
+                                    <a href="route{{'/altera/membroAdm/view', $membro->idMembro}}"><button class="btn" style="background-color: yellow; border-color: yellow;color: white">Alterar</button></a>
                                     <button class="btn" style="background-color: red; border-color:red;color: white">Remover</button>
 
                                 </div>
                             </div>
                         </div>
+                        @endforeach
 
-                        <div class="container">
+                       <!-- <div class="container">
                                 <div class="row espac-evento">
                                     <div class="col-6">
                                         <div class="row">
@@ -93,7 +104,7 @@
     
                                     </div>
                                 </div>
-                            </div>
+                            </div>-->
                     </section>
                 </section>
             </div>

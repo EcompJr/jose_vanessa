@@ -43,24 +43,24 @@
 
             <div class="col-6 offset-3">
                 <section id="cadastroMembros">
-                    <h3 class="text-center" style="font-weight: 700; color:black">Novo Membro</h3>
-                    <form method = "POST" name="cadastroMembro" action="/membroAdm/cadastro">
+                    <h3 class="text-center" style="font-weight: 700; color:black">Alterar Evento</h3>
+                    <form method="POST" name="eventos" action="/eventoAdm/cadastro">
                     {{ csrf_field() }}
                         <div class="form-group">
-                            <label class="my-1 mr-2" for="setor">Setor</label>
-                            <select name="idDepartamento" class="custom-select my-1 mr-sm-2" id="setor">
-                                <option value="1">DIRETORIA ADMINISTRATIVA</option>
-                                <option value="2">COORDENAÇÃO</option>
-                                <option value="3">EQUIPE TÉCNICA</option>
-                                <option value="4">ADMINISTRAÇÃO E AUXILIARES</option>
-                            </select>
-
-                            <label for="nome">Nome</label>
-                            <input type="text" class="form-control" name="nome" id="nome" aria-describedby="emailHelp" placeholder="">
+                            <label class="my-1 mr-2" for="data">Data</label>
+                            <input type="text" class="form-control" placeholder="Ex.: dd/mm/aaaa" maxlength="10" name="data">
+                        </div>
+                        <div>
+                            <label for="nome">Nome do Evento</label>
+                            <input type="text" name="nome" class="form-control" id="nome" aria-describedby="emailHelp" placeholder="">
                         </div>
                         <div class="form-group">
-                            <label for="funcao">Função</label>
-                            <input type="text" class="form-control" name="funcao" id="funcao" placeholder="">
+                            <label for="local">Local</label>
+                            <input type="text" name="local" class="form-control" id="local" placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <label for="horario">Horário</label>
+                            <input type="text" class="form-control" placeholder="Ex.: 00:00:00" maxlength="8" name="horario">
                         </div>
                         <button type="submit" class="btn btn-block" style="background-color:#1976d3;color: white">CADASTRAR</button>
                     </form>

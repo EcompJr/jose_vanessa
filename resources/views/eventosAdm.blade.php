@@ -45,35 +45,37 @@
                 <section id="paginaAdmin">
                     <h3 class="text-center" style="font-weight: 700; color: black">Eventos</h3>
                     <section class="areaAdm ">
-                        <button class="btn btn-success text-left" src="/eventoAdm/cadastro" style=" margin-bottom: 10px">Cadastrar Novo Evento</button>
-                        
+                        <a href="/cadastro/eventosAdm/view"><button class="btn btn-success text-left" style=" margin-bottom: 10px">Cadastrar Novo Evento</button></a>
+                        @foreach($eventos as $evento)
                         <div class="container">
                             <div class="row espac-evento">
                                 <div class="col-6">
                                     <div class="row">
-                                        <label>05 de Outubro de 2018</label>
+                                        <label>Data: </label>
+                                        <label>&nbsp{{$evento->data}}</label>
                                     </div>
                                     <div class="row">
-                                        
-                                        <label>Nome do Evento</label>
+                                        <label>Evento: </label>
+                                        <label>&nbsp{{$evento->nome}}</label>
                                     </div>
                                     <div class="row">
-                                        
-                                        <label>Local do Evento</label>
+                                        <label>Local: </label>
+                                        <label>&nbsp{{$evento->local}}</label>
                                     </div>
                                     <div class="row">
-                                        
-                                        <label>Horário</label>
+                                        <label>Horário: </label>
+                                        <label>&nbsp{{$evento->horario}}</label>
                                     </div>
                                 </div>
                                 <div class="col-6 text-right">
-                                    <button class="btn" style="background-color: yellow; border-color: yellow;color: white">Alterar</button>
+                                    <a href="route{{'/altera/eventosAdm/view', $evento->idEvento}}"><button class="btn" style="background-color: yellow; border-color: yellow;color: white">Alterar</button></a>
                                     <button class="btn" style="background-color: red; border-color:red;color: white">Remover</button>
 
                                 </div>
                             </div>
                         </div>
-
+                        @endforeach
+<!--
                         <div class="container">
                             <div class="row espac-evento">
                                 <div class="col-6">
@@ -96,7 +98,7 @@
         
                                 </div>
                             </div>
-                        </div>
+                        </div>-->
                     </section>
                 </section>
             </div>

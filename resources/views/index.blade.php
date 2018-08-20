@@ -118,22 +118,24 @@
                                     </ol>
                                     <div class="carousel-inner" style="">
                                         <div class="carousel-item active text-center ">
-                                            <h4 class=" tituloagenda text-center">Setembro</h4>
+                                            <h4 class=" tituloagenda text-center"></h4>
                                                 <div class="row alinhamentoagenda">
+                                                @foreach($eventos as $evento)
                                                     <div class="col-6" style="">
-                                                        <div class="dataevento"><label>04 de Setembro de 2018</label></div>
-                                                        <div><label>Nome do Evento</label></div>
-                                                        <div><label>Local do Evento</label></div>
-                                                        <div><label>Horário</label></div>
+                                                        <div class="dataevento"><label>{{$evento->data}}</label></div>
+                                                        <div><label>{{$evento->nome}}</label></div>
+                                                        <div><label>{{$evento->local}}</label></div>
+                                                        <div><label>{{$evento->horario}}</label></div>
                                                     </div>
-                                                    <div class="col-6">
+                                                @endforeach
+                                                 <!--   <div class="col-6">
                                                         <div  class="dataevento"><label>04 de Setembro de 2018</label></div>
                                                         <div><label>Nome do Evento</label></div>
                                                         <div><label>Local do Evento</label></div>
                                                         <div><label>Horário</label></div>
-                                                    </div>
+                                                    </div>-->
                                                 </div>
-                                                <div class="row alinhamentoagenda">
+                                               <!-- <div class="row alinhamentoagenda">
                                                     <div class="col-6 ">
                                                         <div class="dataevento"><label>04 de Setembro de 2018</label></div>
                                                             <div><label>Nome do Evento</label></div>
@@ -177,7 +179,7 @@
                                                             <div><label>Local do Evento</label></div>
                                                             <div><label>Horário</label></div>
                                                         </div>
-                                                    </div>
+                                                    </div>-->
                                                 </div>
                                         </div>
                                             <a class="carousel-control-prev" href="#carouselExampleIndicators2" role="button" data-slide="prev">
