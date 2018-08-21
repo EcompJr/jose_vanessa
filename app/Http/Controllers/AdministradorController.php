@@ -82,7 +82,7 @@ class AdministradorController extends Controller
 
     public function cadastroMembro(Request $request){//request
        
-       $membro = new Membro;
+        $membro = new Membro;
         $membro->nome = $request->nome;
         $membro->funcao = $request->funcao;
         $membro->idDepartamento = $request->idDepartamento;

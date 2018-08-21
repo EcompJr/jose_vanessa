@@ -18,31 +18,25 @@
 </head>
 <body>
 
-    <div class="top-container">
+   <div class="top-container" style="width:100%">
 
-        <header id="header">
+         <header id="header" style="">
             <div class="container-fluid" >
-                <div id="logo" class="col-3">
-                    <a href="/" class="scrollto"><img src="{{asset('images/apae2.png')}}" class="img-topBar img-fluid" alt=""></a>
+                <div id="logo" class="col-2">
+                    <a href="/" class="scrollto"><img src="images/apae2.png" class="img-topBar img-fluid" alt=""></a>
                 </div>
-                <nav id="nav-menu-container " class="col-9 text-right" >
+                <nav id="nav-menu-container " class="col-9 text-right" style="height:100%;width:100%"  >
                     <ul class="nav-menu">
-                        <li><a href="/">Inicio</a></li>
-                        <li><a href="/quemsomos">Quem Somos</a></li>
-                        <li><a href="/nossotime">Nosso Time</a></li>
-                        <!--<li><a href="index.html#agenda">Agenda</a></li>
-                        <li><a href="index.html#faleconosco">Fale Conosco</a></li>
-                        <!--<li class="menu-active"><a href="#team">DOE</a></li>-->
-                    </ul>
+                        <li class="pt-3"><a href="/">Inicio</a></li>
+                        <li class="pt-3"><a href="/quemsomos">Quem Somos</a></li>
+                        <li class="pt-3"><a href="/nossotime">Nosso Time</a></li>
+                 </ul>
                     
-                    <div><label><a href="{{ url('/login') }}">Login</a></label></div>
+                    <div class="pt-3 text-right" >
+                        <label style="border-radius:50px;background-color:rgba(206, 201, 201,0.4);"><a href="{{ url('/login') }}">Login</a></label>
+                    </div>
     
                 </nav>
-               
-            </div>
-           
-
-
         </header>
 
         <main>
